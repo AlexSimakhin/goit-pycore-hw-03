@@ -9,7 +9,7 @@ def get_days_from_today(date) -> int:
     current_date = datetime.today().date()
     
     # Обчислюємо різницю у днях між заданою датою і поточною
-    return (given_date - current_date).days
+    return (current_date - given_date).days
   except ValueError:
     return 'Incorrect date format. Use the format "YYYY-MM-DD".'
       
@@ -21,3 +21,4 @@ print(get_days_from_today("2021-10-09"))
 
 # У вимозі до задачі (2. ... Якщо задана дата пізніша за поточну, результат має бути від'ємним) 
 # Суперечить прикладу, в якому майбутня дата результат невід'ємне число. Чи я вже заплутався з цими датами :D
+# P.S. Побачив коммент у слаці (але я б зробив "return (given_date - current_date).days")
