@@ -2,8 +2,13 @@ from datetime import datetime
 
 def get_days_from_today(date) -> int:
   try:
+    # Перетворюємо рядок з датою у формат "YYYY-MM-DD" на об'єкт дати
     given_date = datetime.strptime(date, "%Y-%m-%d").date()
+    
+    # Отримуємо поточну дату без часу
     current_date = datetime.today().date()
+    
+    # Обчислюємо різницю у днях між заданою датою і поточною
     return (given_date - current_date).days
   except ValueError:
     return 'Incorrect date format. Use the format "YYYY-MM-DD".'
